@@ -72,14 +72,11 @@ public class AllSeeingEye extends Item implements MenuProvider {
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         ItemStack itemstack = player.getItemInHand(hand);
 
-        if(!level.isClientSide()) {
-            return InteractionResultHolder.fail(itemstack);
+        if(level.isClientSide()) {
+            return  InteractionResultHolder.consume(itemstack);
         }
 
-        var menu = new AllSeeingEyeMenu(0, player.getInventory());
-        var screen = new AllSeeingEyeScreen(menu, player.getInventory(), Component.literal("All Seeing Eye Configuration"));
-
-        Minecraft.getInstance().setScreen(screen);
+        player.openMenu(this);
 
         return InteractionResultHolder.sidedSuccess(itemstack, level.isClientSide());
     }
