@@ -1,7 +1,9 @@
 package dev.florianscholz.easyitems.screen.custom;
 
+import dev.florianscholz.easyitems.component.ModDataComponents;
 import dev.florianscholz.easyitems.item.ModItems;
 import dev.florianscholz.easyitems.screen.ModMenuTypes;
+import net.minecraft.core.component.DataComponentType;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Inventory;
@@ -14,27 +16,14 @@ import net.neoforged.neoforge.items.SlotItemHandler;
 
 public class AllSeeingEyeMenu extends AbstractContainerMenu {
 
-    private final Level level;
-    private final ContainerData data;
+    private final ItemStack itemstack;
 
-    public AllSeeingEyeMenu(int containerId, Inventory inv) {
-        this(containerId, inv, new SimpleContainerData(1));
-    }
-
-    public AllSeeingEyeMenu(int containerId, Inventory inv, ContainerData data) {
+    public AllSeeingEyeMenu(int containerId, Inventory inv, RegistryFriendlyByteBuf registryFriendlyByteBuf) {
         super(ModMenuTypes.ALL_SEEING_EYE_MENU.get(), containerId);
-        this.level = inv.player.level();
-        this.data = data;
-
+        this.itemstack = ItemStack.STREAM_CODEC.decode(registryFriendlyByteBuf);
         addPlayerInventory(inv);
         addPlayerHotbar(inv);
         addSlot(new SlotItemHandler(new ItemStackHandler(), 0, 81, 34));
-
-        addDataSlots(data);
-    }
-
-    public AllSeeingEyeMenu(int i, Inventory inventory, RegistryFriendlyByteBuf registryFriendlyByteBuf) {
-        this(i, inventory, new SimpleContainerData(1));
     }
 
     // CREDIT GOES TO: diesieben07 | https://github.com/diesieben07/SevenCommons
@@ -54,6 +43,7 @@ public class AllSeeingEyeMenu extends AbstractContainerMenu {
 
     // THIS YOU HAVE TO DEFINE!
     private static final int TE_INVENTORY_SLOT_COUNT = 1;  // must be the number of slots you have!
+
     @Override
     public ItemStack quickMoveStack(Player playerIn, int pIndex) {
         Slot sourceSlot = slots.get(pIndex);
@@ -88,8 +78,8 @@ public class AllSeeingEyeMenu extends AbstractContainerMenu {
     }
 
     @Override
-    public boolean stillValid(Player pPlayer) {
-        return pPlayer.getItemInHand(InteractionHand.MAIN_HAND).is(ModItems.ALL_SEEING_EYE);
+    public boolean stillValid(Player player) {
+        return player.getItemInHand(InteractionHand.MAIN_HAND).is(ModItems.ALL_SEEING_EYE);
     }
 
     private void addPlayerInventory(Inventory playerInventory) {
@@ -104,5 +94,11 @@ public class AllSeeingEyeMenu extends AbstractContainerMenu {
         for (int i = 0; i < 9; ++i) {
             this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 142));
         }
+    }
+
+    @Override
+    public void removed(Player player) {
+//        DataComponentType<ItemStack> stack = player.getData(ModDataComponents.TARGET_ITEM);
+        super.removed(player);
     }
 }

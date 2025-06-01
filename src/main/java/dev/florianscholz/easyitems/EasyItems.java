@@ -2,6 +2,7 @@ package dev.florianscholz.easyitems;
 
 import dev.florianscholz.easyitems.block.ModBlocks;
 import dev.florianscholz.easyitems.block.entity.ModBlockEntities;
+import dev.florianscholz.easyitems.component.ModDataComponents;
 import dev.florianscholz.easyitems.enchantment.ModEnchantmentEffects;
 import dev.florianscholz.easyitems.item.ModCreativeModeTabs;
 import dev.florianscholz.easyitems.item.ModItems;
@@ -61,6 +62,7 @@ public class EasyItems
         ModLootModifiers.register(modEventBus);
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
+        ModDataComponents.register(modEventBus);
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);

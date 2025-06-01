@@ -19,8 +19,11 @@ public class ModMenuTypes {
     public static final DeferredHolder<MenuType<?>, MenuType<MaterialInfuserMenu>> MATERIAL_INFUSER_MENU =
             registerMenuType("material_infuser_menu", MaterialInfuserMenu::new);
 
+//    public static final DeferredHolder<MenuType<?>, MenuType<AllSeeingEyeMenu>> ALL_SEEING_EYE_MENU2 =
+//            registerMenuType("all_seeing_eye_menu", AllSeeingEyeMenu::new);
+
     public static final DeferredHolder<MenuType<?>, MenuType<AllSeeingEyeMenu>> ALL_SEEING_EYE_MENU =
-            registerMenuType("all_seeing_eye_menu", AllSeeingEyeMenu::new);
+            MENUS.register("all_seeing_eye_menu", () -> IMenuTypeExtension.create(AllSeeingEyeMenu::new));
 
     private static <T extends AbstractContainerMenu> DeferredHolder<MenuType<?>, MenuType<T>> registerMenuType(String name,
                                                                                                                IContainerFactory<T> factory) {
