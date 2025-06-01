@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "easyitems:blueprint_pickaxe"
+    },
+    "M": {
+      "item": "minecraft:gold_ingot"
+    }
+  },
+  "pattern": [
+    "MMM",
+    " B "
+  ],
+  "result": {
+    "count": 1,
+    "id": "easyitems:pickaxe_head_gold"
+  }
+}

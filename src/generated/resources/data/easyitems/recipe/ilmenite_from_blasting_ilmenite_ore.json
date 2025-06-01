@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.25,
+  "group": "ilmite",
+  "ingredient": {
+    "item": "easyitems:ilmenite_ore"
+  },
+  "result": {
+    "count": 1,
+    "id": "easyitems:ilmenite"
+  }
+}

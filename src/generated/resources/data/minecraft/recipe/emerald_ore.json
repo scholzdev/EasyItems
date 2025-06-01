@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "I": {
+      "item": "minecraft:emerald"
+    },
+    "S": {
+      "item": "minecraft:stone"
+    },
+    "T": {
+      "item": "easyitems:infused_tungsten"
+    }
+  },
+  "pattern": [
+    "STS",
+    "TIT",
+    "STS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:emerald_ore"
+  }
+}

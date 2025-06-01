@@ -1,0 +1,16 @@
+// 1.21.1	2025-05-30T22:56:43.363443	Block States: easyitems
+34646a1b544f5064e3d32b99b28d96e181d8400a assets/easyitems/blockstates/bismuth_block.json
+442cac2156cb2490eadc0209d95c4d0b1ca7fa3b assets/easyitems/blockstates/bismuth_ore.json
+d8a5651dc68719b7fa9cf51288b8cfa941cf029d assets/easyitems/blockstates/ilmenite_ore.json
+6c9e4932592967c661e85010f9e2b64dd5ed76f3 assets/easyitems/blockstates/material_infuser.json
+d3d969b17cf251e846f3fa9568dacde7f9f4e01a assets/easyitems/blockstates/tungsten_ore.json
+fe2b06dd7fbff4f794dcc96c4673a72bb14b85fc assets/easyitems/models/block/bismuth_block.json
+b0ac890f1d9dce78561ebdf022ec941b0f1579cd assets/easyitems/models/block/bismuth_ore.json
+d89cf225a622cdb34badd1c7104a890bf855943f assets/easyitems/models/block/ilmenite_ore.json
+399b8a98ac2b2c773a006a678809311a0d104531 assets/easyitems/models/block/material_infuser.json
+7ff78cad5a35c517b43abe4d344950a60a10543c assets/easyitems/models/block/tungsten_ore.json
+a70486edef5c956f058c81495ab6a1eb753ecafd assets/easyitems/models/item/bismuth_block.json
+fc1ff9137ea04bc3d387c5f1594e9ec393dd8eb3 assets/easyitems/models/item/bismuth_ore.json
+6e0acec076ddf81bd4d1788dcc5c6aad45b4b1cc assets/easyitems/models/item/ilmenite_ore.json
+a7cdd69c6946b621c2866b3ae14bc7a84ac27db0 assets/easyitems/models/item/material_infuser.json
+db4c7bab7472efb56f73922f949f84e8c22c5801 assets/easyitems/models/item/tungsten_ore.json

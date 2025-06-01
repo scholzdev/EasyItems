@@ -1,0 +1,6 @@
+// 1.21.1	2025-05-30T22:56:43.364181	Loot Tables
+c835d2f6371864522c8c8b9f83100c74bd513e80 data/easyitems/loot_table/blocks/bismuth_block.json
+11f077f7bdd309812255cd90681040c8eacfa215 data/easyitems/loot_table/blocks/bismuth_ore.json
+a2f1483d251b5a4508a842628b002e53d6bbe955 data/easyitems/loot_table/blocks/ilmenite_ore.json
+84288e0038f5e211145d8d909407543cbb2a3234 data/easyitems/loot_table/blocks/material_infuser.json
+38842889ed8cc53b279dea0623d8ba835a9ba3f6 data/easyitems/loot_table/blocks/tungsten_ore.json

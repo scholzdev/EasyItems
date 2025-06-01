@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "H": {
+      "item": "easyitems:all_seeing_tungsten_head"
+    }
+  },
+  "pattern": [
+    " H "
+  ],
+  "result": {
+    "count": 1,
+    "id": "easyitems:all_seeing_eye"
+  }
+}

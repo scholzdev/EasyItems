@@ -1,0 +1,9 @@
+{
+  "type": "easyitems:tungsten_infuser",
+  "ingredient": {
+    "item": "easyitems:tungsten"
+  },
+  "result": {
+    "id": "easyitems:infused_tungsten"
+  }
+}

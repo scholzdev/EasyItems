@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "dev.florianscholz.easyitems.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "TestMixin",
+    "EntityMixin"
+  ],
+  "client": [
+
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

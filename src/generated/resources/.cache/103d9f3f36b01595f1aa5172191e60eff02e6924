@@ -1,0 +1,9 @@
+// 1.21.1	2025-05-30T17:01:12.768387	Registries
+845c6d915185be027e10ef5a35671202f8f7411d data/easyitems/enchantment/attack_range.json
+5a63f696410a3f0b084ddee1d1008e37ab3ff797 data/easyitems/enchantment/bleeding.json
+1fc2cf29497137e1cc6d4437c1f0de23682ab570 data/easyitems/enchantment/climbing.json
+975394da9a70f07b6c45e314fc806d2ea5691814 data/easyitems/enchantment/lifesteal.json
+5e42b6a1e4dbacc6163fc226ef3e989354b0574c data/easyitems/enchantment/mining_range.json
+042bead61f8eb0308715c1bd701a8592e123ca9a data/easyitems/neoforge/biome_modifier/add_tungsten_ore.json
+d0266f629d7da31811a1e783d2c6b2494c329959 data/easyitems/worldgen/configured_feature/tungsten_ore.json
+0c56f31f946daa30bd66e137494cfc915a5a9f91 data/easyitems/worldgen/placed_feature/tungsten_ore_placed.json
