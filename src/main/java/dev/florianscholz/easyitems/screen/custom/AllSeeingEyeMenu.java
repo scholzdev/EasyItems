@@ -1,9 +1,8 @@
 package dev.florianscholz.easyitems.screen.custom;
 
-import dev.florianscholz.easyitems.component.ModDataComponents;
+import com.mojang.datafixers.TypeRewriteRule;
 import dev.florianscholz.easyitems.item.ModItems;
 import dev.florianscholz.easyitems.screen.ModMenuTypes;
-import net.minecraft.core.component.DataComponentType;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Inventory;
@@ -16,14 +15,20 @@ import net.neoforged.neoforge.items.SlotItemHandler;
 
 public class AllSeeingEyeMenu extends AbstractContainerMenu {
 
-    private final ItemStack itemstack;
+    private ItemStack targetItem;
+    ItemStackHandler itemStackHandler = new ItemStackHandler(1);
 
-    public AllSeeingEyeMenu(int containerId, Inventory inv, RegistryFriendlyByteBuf registryFriendlyByteBuf) {
+    public AllSeeingEyeMenu(int containerId, Inventory inv, ItemStack itemstack) {
         super(ModMenuTypes.ALL_SEEING_EYE_MENU.get(), containerId);
-        this.itemstack = ItemStack.STREAM_CODEC.decode(registryFriendlyByteBuf);
+        this.targetItem = itemstack;
         addPlayerInventory(inv);
         addPlayerHotbar(inv);
-        addSlot(new SlotItemHandler(new ItemStackHandler(), 0, 81, 34));
+        itemStackHandler.setStackInSlot(0, itemstack);
+        addSlot(new SlotItemHandler(itemStackHandler, 0, 81, 34));
+    }
+
+    public AllSeeingEyeMenu(int containerId, Inventory inv, RegistryFriendlyByteBuf registryFriendlyByteBuf) {
+        this(containerId, inv, ItemStack.STREAM_CODEC.decode(registryFriendlyByteBuf));
     }
 
     // CREDIT GOES TO: diesieben07 | https://github.com/diesieben07/SevenCommons
@@ -98,7 +103,8 @@ public class AllSeeingEyeMenu extends AbstractContainerMenu {
 
     @Override
     public void removed(Player player) {
-//        DataComponentType<ItemStack> stack = player.getData(ModDataComponents.TARGET_ITEM);
+        this.targetItem = itemStackHandler.getStackInSlot(0);
+        this.itemStackHandler.setStackInSlot(0, targetItem);
         super.removed(player);
     }
 }
