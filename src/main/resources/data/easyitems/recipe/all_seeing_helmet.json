@@ -1,0 +1,10 @@
+{
+  "type": "easyitems:all_seeing_helmet",
+  "ingredient": [
+    { "item": "easyitems:all_seeing_tungsten_head" },
+    { "item": "easyitems:all_seeing_eye" }
+  ],
+  "result": {
+    "item": "easyitems:all_seeing_helmet"
+  }
+}

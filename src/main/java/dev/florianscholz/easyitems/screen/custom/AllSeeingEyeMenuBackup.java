@@ -1,37 +1,33 @@
 package dev.florianscholz.easyitems.screen.custom;
 
-import dev.florianscholz.easyitems.component.ModDataComponents;
 import dev.florianscholz.easyitems.item.ModItems;
 import dev.florianscholz.easyitems.screen.ModMenuTypes;
 import net.minecraft.network.RegistryFriendlyByteBuf;
-import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.*;
+import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
-import net.neoforged.neoforge.capabilities.Capabilities;
-import net.neoforged.neoforge.items.IItemHandler;
 import net.neoforged.neoforge.items.ItemStackHandler;
 import net.neoforged.neoforge.items.SlotItemHandler;
 
-public class AllSeeingEyeMenu extends AbstractContainerMenu {
+public class AllSeeingEyeMenuBackup extends AbstractContainerMenu {
 
-    public ItemStack parent;
-    public AllSeeingEyeMenu(int containerId, Inventory inv, ItemStack itemStack) {
+    private ItemStack targetItem;
+    ItemStackHandler itemStackHandler = new ItemStackHandler(1);
+
+    public AllSeeingEyeMenuBackup(int containerId, Inventory inv, ItemStack itemstack) {
         super(ModMenuTypes.ALL_SEEING_EYE_MENU.get(), containerId);
-        IItemHandler handler = itemStack.getCapability(Capabilities.ItemHandler.ITEM);
-
-        if(handler != null) {
-            addSlot(new SlotItemHandler(handler, 0, 81, 34));
-        }
-
+        this.targetItem = itemstack;
         addPlayerInventory(inv);
         addPlayerHotbar(inv);
+        itemStackHandler.setStackInSlot(0, itemstack);
+        addSlot(new SlotItemHandler(itemStackHandler, 0, 81, 34));
     }
 
-    public static AllSeeingEyeMenu fromNetwork(int id, Inventory inv, RegistryFriendlyByteBuf extraData) {
-        return new AllSeeingEyeMenu(id, inv, ItemStack.STREAM_CODEC.decode(extraData));
+    public AllSeeingEyeMenuBackup(int containerId, Inventory inv, RegistryFriendlyByteBuf registryFriendlyByteBuf) {
+        this(containerId, inv, ItemStack.STREAM_CODEC.decode(registryFriendlyByteBuf));
     }
 
     // CREDIT GOES TO: diesieben07 | https://github.com/diesieben07/SevenCommons
@@ -102,5 +98,12 @@ public class AllSeeingEyeMenu extends AbstractContainerMenu {
         for (int i = 0; i < 9; ++i) {
             this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 142));
         }
+    }
+
+    @Override
+    public void removed(Player player) {
+        this.targetItem = itemStackHandler.getStackInSlot(0);
+        this.itemStackHandler.setStackInSlot(0, targetItem);
+        super.removed(player);
     }
 }

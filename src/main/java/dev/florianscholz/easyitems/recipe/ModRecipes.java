@@ -11,6 +11,7 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 public class ModRecipes {
     public static final DeferredRegister<RecipeSerializer<?>> SERIALIZERS =
             DeferredRegister.create(Registries.RECIPE_SERIALIZER, EasyItems.MOD_ID);
+
     public static final DeferredRegister<RecipeType<?>> TYPES =
             DeferredRegister.create(Registries.RECIPE_TYPE, EasyItems.MOD_ID);
 
@@ -24,6 +25,16 @@ public class ModRecipes {
                 }
             });
 
+    public static final DeferredHolder<RecipeSerializer<?>, RecipeSerializer<AllSeeingHelmetRecipe>> ALL_SEEING_HELMET_SERIALIZER =
+            SERIALIZERS.register("all_seeing_helmet", AllSeeingHelmetRecipe.Serializer::new);
+
+    public static final DeferredHolder<RecipeType<?>, RecipeType<AllSeeingHelmetRecipe>> ALL_SEEING_HELMET_TYPE =
+            TYPES.register("all_seeing_helmet", () -> new RecipeType<>() {
+                @Override
+                public String toString() {
+                    return "all_seeing_helmet";
+                }
+            });
 
     public static void register(IEventBus eventBus) {
         SERIALIZERS.register(eventBus);
