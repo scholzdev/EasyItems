@@ -1,30 +1,12 @@
 package dev.florianscholz.easyitems;
 
-import dev.florianscholz.easyitems.block.ModBlocks;
-import dev.florianscholz.easyitems.block.entity.ModBlockEntities;
-import dev.florianscholz.easyitems.component.ModDataComponents;
 import dev.florianscholz.easyitems.effects.ModEffects;
 import dev.florianscholz.easyitems.enchantment.ModEnchantmentEffects;
-import dev.florianscholz.easyitems.item.ModCreativeModeTabs;
 import dev.florianscholz.easyitems.item.ModItems;
 import dev.florianscholz.easyitems.loot.ModLootModifiers;
-import dev.florianscholz.easyitems.recipe.ModRecipes;
-import dev.florianscholz.easyitems.screen.ModMenuTypes;
-import dev.florianscholz.easyitems.screen.custom.AllSeeingHelmetScreen;
-import dev.florianscholz.easyitems.screen.custom.MaterialInfuserScreen;
-import dev.florianscholz.easyitems.tooltip.TooltipStyle;
-import dev.florianscholz.easyitems.tracker.PaybackTracker;
-import dev.florianscholz.easyitems.util.EnchantmentUtils;
 import dev.florianscholz.easyitems.util.ItemEntityMappingLoader;
-import dev.florianscholz.easyitems.util.ModTags;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.item.ItemStack;
-import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
 import net.neoforged.neoforge.event.AddReloadListenerEvent;
-import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
-import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -60,17 +42,11 @@ public class EasyItems
         NeoForge.EVENT_BUS.register(this);
         NeoForge.EVENT_BUS.addListener(this::onAddReloadListeners);
 
-        ModCreativeModeTabs.register(modEventBus);
         ModItems.register(modEventBus);
-        ModBlocks.register(modEventBus);
         ModEnchantmentEffects.register(modEventBus);
-        ModRecipes.register(modEventBus);
         ModEffects.register(modEventBus);
 
         ModLootModifiers.register(modEventBus);
-        ModBlockEntities.register(modEventBus);
-        ModMenuTypes.register(modEventBus);
-        ModDataComponents.register(modEventBus);
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
@@ -99,27 +75,11 @@ public class EasyItems
     public void onServerStarting(ServerStartingEvent event) {
     }
 
-    @SubscribeEvent
-    public void onItemTooltip(ItemTooltipEvent event) {
-        if(event.getItemStack().is(ModTags.Items.PICKAXE_ITEMS)) {
-            int maxDurability = event.getItemStack().getMaxDamage();
-            int durability = maxDurability - event.getItemStack().getDamageValue();
-            TooltipStyle style = TooltipStyle.NUMBERS;
-            style.appendTooltip(event.getToolTip(), durability, maxDurability);
-        }
-    }
-
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
     @EventBusSubscriber(modid = MOD_ID, value = Dist.CLIENT)
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-        }
-
-        @SubscribeEvent
-        public static void registerScreen(RegisterMenuScreensEvent event) {
-            event.register(ModMenuTypes.MATERIAL_INFUSER_MENU.get(), MaterialInfuserScreen::new);
-            event.register(ModMenuTypes.ALL_SEEING_MENU.get(), AllSeeingHelmetScreen::new);
         }
     }
 }

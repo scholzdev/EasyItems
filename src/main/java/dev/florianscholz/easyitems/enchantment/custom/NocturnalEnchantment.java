@@ -19,7 +19,7 @@ public class NocturnalEnchantment extends BaseEnchantment implements TickableEnc
         super(
                 ModEnchantmentKeys.NOCTURNAL,
                 ItemTags.CHEST_ARMOR_ENCHANTABLE,
-                ModTags.Enchantments.HEALING_EXCLUSIVE,
+//                ModTags.Enchantments.HEALING_EXCLUSIVE,
                 EquipmentSlotGroup.ARMOR,
                 EquipmentSlot.CHEST,
                 5,

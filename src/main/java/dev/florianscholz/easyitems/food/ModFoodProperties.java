@@ -1,4 +1,4 @@
-package dev.florianscholz.easyitems.item;
+package dev.florianscholz.easyitems.food;
 
 import dev.florianscholz.easyitems.effects.ModEffects;
 import net.minecraft.world.effect.MobEffectInstance;

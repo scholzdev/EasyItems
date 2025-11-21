@@ -3,7 +3,6 @@
   "package": "dev.florianscholz.easyitems.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "MinecraftMixin"
   ],
   "client": [
     "LightTextureMixin",

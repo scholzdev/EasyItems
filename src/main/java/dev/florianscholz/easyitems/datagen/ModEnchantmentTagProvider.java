@@ -1,6 +1,5 @@
 package dev.florianscholz.easyitems.datagen;
 
-
 import dev.florianscholz.easyitems.enchantment.ModEnchantmentKeys;
 import dev.florianscholz.easyitems.util.ModTags;
 import net.minecraft.core.HolderLookup;
@@ -22,13 +21,13 @@ public class ModEnchantmentTagProvider extends EnchantmentTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        tag(ModTags.Enchantments.HEALING_EXCLUSIVE)
-                .add(ModEnchantmentKeys.PHOTOSYNTHESIS)
-                .add(ModEnchantmentKeys.NOCTURNAL);
-
-        for (ResourceKey<Enchantment> key : ModEnchantmentKeys.getAllKeys()) {
-            tag(EnchantmentTags.NON_TREASURE).add(key);
-            tag(EnchantmentTags.TRADEABLE).add(key);
-        }
+//        tag(ModTags.Enchantments.HEALING_EXCLUSIVE)
+//                .add(ModEnchantmentKeys.PHOTOSYNTHESIS)
+//                .add(ModEnchantmentKeys.NOCTURNAL);
+//
+//        for (ResourceKey<Enchantment> key : ModEnchantmentKeys.getAllKeys()) {
+//            tag(EnchantmentTags.NON_TREASURE).add(key);
+//            tag(EnchantmentTags.TRADEABLE).add(key);
+//        }
     }
 }

@@ -35,20 +35,17 @@ public class ModEnchantmentKeys {
         var enchantments = context.lookup(Registries.ENCHANTMENT);
         var items = context.lookup(Registries.ITEM);
 
-        register(context, GOURMET, Enchantment.enchantment(Enchantment.definition(
-                items.getOrThrow(ItemTags.ARMOR_ENCHANTABLE),
-                items.getOrThrow(ItemTags.CHEST_ARMOR),
-                5,
-                2,
-                Enchantment.dynamicCost(5, 7),
-                Enchantment.dynamicCost(25, 7),
-                2,
-                EquipmentSlotGroup.CHEST))
-        );
-
-//        ModEnchantmentRegistry.getAllEnchantments().forEach(enchantment -> {
-//            ModEnchantmentRegistry.register(context, enchantment);
-//        });
+        ModEnchantmentRegistry.getAllEnchantments().forEach(key -> {
+            register(context, key.getKey(), Enchantment.enchantment(Enchantment.definition(
+                    items.getOrThrow(key.getSupportedItems()),
+                    key.getWeight(),
+                    key.getMaxLevel(),
+                    Enchantment.dynamicCost(key.getMinCostBase(), key.getMinCostPerLevel()),
+                    Enchantment.dynamicCost(key.getMaxCostBase(), key.getMaxCostPerLevel()),
+                    key.getAnvilCost(),
+                    key.getSlotGroup()))
+            );
+        });
     }
 
     private static void register(BootstrapContext<Enchantment> registry, ResourceKey<Enchantment> key, Enchantment.Builder builder) {

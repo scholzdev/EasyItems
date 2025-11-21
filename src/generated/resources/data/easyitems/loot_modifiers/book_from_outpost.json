@@ -1,0 +1,12 @@
+{
+  "type": "easyitems:add_enchanted_book_item",
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:chests/pillager_outpost"
+    }
+  ],
+  "enchantmentId": "easyitems:photosynthesis",
+  "itemId": "minecraft:book",
+  "level": 3
+}

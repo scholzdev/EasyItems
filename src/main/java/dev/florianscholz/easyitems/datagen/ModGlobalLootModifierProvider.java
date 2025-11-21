@@ -2,8 +2,8 @@ package dev.florianscholz.easyitems.datagen;
 
 import dev.florianscholz.easyitems.EasyItems;
 import dev.florianscholz.easyitems.enchantment.ModEnchantmentKeys;
-import dev.florianscholz.easyitems.enchantment.ModEnchantmentRegistry;
 import dev.florianscholz.easyitems.item.ModItems;
+import dev.florianscholz.easyitems.loot.AddEnchantedBookItemModifier;
 import dev.florianscholz.easyitems.loot.AddItemModifier;
 import dev.florianscholz.easyitems.loot.ReaperLootModifier;
 import net.minecraft.core.HolderLookup;
@@ -21,6 +21,7 @@ import net.neoforged.neoforge.common.data.GlobalLootModifierProvider;
 import net.neoforged.neoforge.common.loot.LootTableIdCondition;
 
 import java.util.HashMap;
+import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 
 public class ModGlobalLootModifierProvider extends GlobalLootModifierProvider {
@@ -39,25 +40,25 @@ public class ModGlobalLootModifierProvider extends GlobalLootModifierProvider {
     protected void start() {
         registerHeadAndSoulLootTables();
 
-        HolderLookup.Provider provider = this.registries.join();
-        HolderLookup.RegistryLookup<Enchantment> enchantmentLookup = provider.lookupOrThrow(Registries.ENCHANTMENT);
-
-        var instance = new EnchantmentInstance(
-                enchantmentLookup.getOrThrow(Enchantments.SHARPNESS),
-                1
-        );
-        ItemStack stack = EnchantedBookItem.createForEnchantment(instance);
-
-        this.add("berserk_from_outpost", new AddItemModifier(
+        this.add("book_from_outpost", new AddEnchantedBookItemModifier(
                 new LootItemCondition[]{
-                        new LootTableIdCondition.Builder(
-                                ResourceLocation.withDefaultNamespace("chests/pillager_outpost")
-                        ).build()
+                        LootTableIdCondition.builder(ResourceLocation.withDefaultNamespace("chests/pillager_outpost")).build()
                 },
-                stack.getItem()
+                ResourceLocation.withDefaultNamespace("book"),
+                Optional.of(ModEnchantmentKeys.GOURMET.location()),
+                1
         ));
-    }
 
+        this.add("book_from_outpost", new AddEnchantedBookItemModifier(
+                new LootItemCondition[]{
+                        LootTableIdCondition.builder(ResourceLocation.withDefaultNamespace("chests/pillager_outpost")).build()
+                },
+                ResourceLocation.withDefaultNamespace("book"),
+                Optional.of(ModEnchantmentKeys.PHOTOSYNTHESIS.location()),
+                3
+        ));
+
+    }
     private void registerHeadAndSoulLootTables() {
 
         double soulChance = 0.4;

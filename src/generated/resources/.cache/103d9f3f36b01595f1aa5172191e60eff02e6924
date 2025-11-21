@@ -1,13 +1,10 @@
-// 1.21.1	2025-11-21T01:22:49.862668	Registries
+// 1.21.1	2025-11-21T04:29:22.390838	Registries
 4f03d77bc28937cfe9779f886c07bc7e819994e8 data/easyitems/enchantment/berserk.json
 bb939c0a516334a73f0807dc9ce699b7eb1f98ea data/easyitems/enchantment/double_jump.json
 a667aeac4f830c776d180593bac51d5ab48b6b4c data/easyitems/enchantment/enlightenment.json
 e4526d11d90ff9da62de1cac7733ec57bdd73c63 data/easyitems/enchantment/gourmet.json
-228556454e0dc23e7706bd873cec5a9f9e82cbb6 data/easyitems/enchantment/nocturnal.json
+d5df54aaba0bd0718c640c39df2d398dce49b685 data/easyitems/enchantment/nocturnal.json
 0e6ec17756288abc78a33f2768188f7ae5028131 data/easyitems/enchantment/payback.json
-eb652679138203c566b2639406a391e6cf58a384 data/easyitems/enchantment/photosynthesis.json
+391e9723558442c389344e3f0a33f130986a7c19 data/easyitems/enchantment/photosynthesis.json
 20ebcb9d035d2383c641b81997a8286901651b1f data/easyitems/enchantment/reaper.json
 44c68fc707a3e58b8ecae33d66707a84b1ee362b data/easyitems/enchantment/smelting.json
-042bead61f8eb0308715c1bd701a8592e123ca9a data/easyitems/neoforge/biome_modifier/add_tungsten_ore.json
-d0266f629d7da31811a1e783d2c6b2494c329959 data/easyitems/worldgen/configured_feature/tungsten_ore.json
-0c56f31f946daa30bd66e137494cfc915a5a9f91 data/easyitems/worldgen/placed_feature/tungsten_ore_placed.json

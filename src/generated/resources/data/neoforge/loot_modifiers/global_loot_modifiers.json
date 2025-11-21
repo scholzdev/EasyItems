@@ -7,7 +7,8 @@
     "easyitems:soul_from_skeleton",
     "easyitems:soul_from_creeper",
     "easyitems:soul_from_ender_dragon",
-    "easyitems:soul_from_piglin"
+    "easyitems:soul_from_piglin",
+    "easyitems:book_from_outpost"
   ],
   "replace": false
 }

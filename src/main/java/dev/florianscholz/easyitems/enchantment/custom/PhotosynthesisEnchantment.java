@@ -20,7 +20,7 @@ public class PhotosynthesisEnchantment extends BaseEnchantment implements Tickab
         super(
                 ModEnchantmentKeys.PHOTOSYNTHESIS,
                 ItemTags.HEAD_ARMOR_ENCHANTABLE,
-                ModTags.Enchantments.HEALING_EXCLUSIVE,
+//                ModTags.Enchantments.HEALING_EXCLUSIVE,
                 EquipmentSlotGroup.HEAD,
                 EquipmentSlot.HEAD,
                 5,
@@ -59,7 +59,6 @@ public class PhotosynthesisEnchantment extends BaseEnchantment implements Tickab
     private void heal(Player player, int level) {
         float healAmount = 1.f + (level * 0.5f);
         player.heal(healAmount);
-        player.sendSystemMessage(Component.literal("you got healed: " + healAmount));
     }
 
     private void spawnParticles(ServerLevel level, Player player) {

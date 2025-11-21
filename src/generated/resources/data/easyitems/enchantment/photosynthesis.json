@@ -3,7 +3,6 @@
   "description": {
     "translate": "enchantment.easyitems.photosynthesis"
   },
-  "exclusive_set": "#easyitems:healing_exclusive",
   "max_cost": {
     "base": 20,
     "per_level_above_first": 8

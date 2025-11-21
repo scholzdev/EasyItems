@@ -1,20 +1,2 @@
-// 1.21.1	2025-11-20T21:01:22.950712	Item Models: easyitems
-8198ce05aae3e07ba9010a9dbe8be6626906fa92 assets/easyitems/models/item/all_seeing_eye.json
-b5e7848e8066367b400a7620c80c4319cbbdf1af assets/easyitems/models/item/all_seeing_helmet.json
-a43005d9f27b73912442fe1899b40ac02209b872 assets/easyitems/models/item/bismuth.json
-7d1030031085085187dd1ad66c56c1744e143419 assets/easyitems/models/item/blueprint_paper.json
-ad702466c2b6a89435c41feb34d973d53a261407 assets/easyitems/models/item/blueprint_pickaxe.json
-1ab54891954617f7139ed5e5560300a4bd6b73c6 assets/easyitems/models/item/craftable_diamond_pickaxe.json
-3ec120bb8ad4a4a4ab34da9a2718f3c5ffbac927 assets/easyitems/models/item/craftable_golden_pickaxe.json
-c39d23047d6d92dd0c31a061bfb8889d6f9fd304 assets/easyitems/models/item/craftable_iron_pickaxe.json
-a47a2caae4e9c6c31b49a2b2cc63084720c6c9e2 assets/easyitems/models/item/ilmenite.json
-1412c7098f5cbf778fe7944dd3e3a4968e3d1514 assets/easyitems/models/item/infused_tungsten.json
-89a8b6956810a95864096d6c0cc58495ec64784e assets/easyitems/models/item/pickaxe_head_diamond.json
-71c3b066fb823869a606d0db804d18028c19bcc2 assets/easyitems/models/item/pickaxe_head_gold.json
-4211db7aa7a197af96c55c984b6f47314f796067 assets/easyitems/models/item/pickaxe_head_iron.json
-d48f7819ecaf2337268940e28dca743ca7323f96 assets/easyitems/models/item/raw_bismuth.json
-d9089c1a06d80781939bd5c9e4132a4c7b9105fe assets/easyitems/models/item/raw_ilmenite.json
-75f1247dfd1d34b72d1d65c8822483bd91a6d63f assets/easyitems/models/item/raw_tungsten.json
+// 1.21.1	2025-11-21T03:49:33.089136	Item Models: easyitems
 63f48fe1fcaaf367b8e2d026fe7623404d3314a5 assets/easyitems/models/item/soul.json
-d77bbd1d5550dfb64ff420a711072c9cd4e4a203 assets/easyitems/models/item/tungsten.json
-c0e9f4d705aacedac691dc5e5b9b9dcf929d86f7 assets/easyitems/models/item/tungsten_head.json

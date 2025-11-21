@@ -13,7 +13,7 @@ public class ModEnchantmentRegistry {
 
     private static final List<IEnchantment> ALL_ENCHANTMENTS = new ArrayList<>();
 
-//    // Alle Enchantments
+    // Alle Enchantments
     public static final PhotosynthesisEnchantment PHOTOSYNTHESIS = register(new PhotosynthesisEnchantment());
     public static final NocturnalEnchantment METABOLISM = register(new NocturnalEnchantment());
     public static final PaybackEnchantment PAYBACK = register(new PaybackEnchantment());
@@ -23,32 +23,6 @@ public class ModEnchantmentRegistry {
     public static final EnlightenmentEnchantment ENLIGHTENMENT = register(new EnlightenmentEnchantment());
     public static final ReaperEnchantment REAPER = register(new ReaperEnchantment());
     public static final GourmetEnchantment GOURMET = register(new GourmetEnchantment());
-
-    public static void register(BootstrapContext<Enchantment> context, IEnchantment enchantment) {
-//        var items = context.lookup(Registries.ITEM);
-//        var enchantmentLookup = context.lookup(Registries.ENCHANTMENT);
-//
-//        Enchantment.Builder builder = Enchantment.enchantment(
-//          Enchantment.definition(
-//                  items.getOrThrow(enchantment.getSupportedItems()),
-//                  enchantment.getWeight(),
-//                  enchantment.getMaxLevel(),
-//                  Enchantment.dynamicCost(enchantment.getMinCostBase(), enchantment.getMinCostPerLevel()),
-//                  Enchantment.dynamicCost(enchantment.getMaxCostBase(), enchantment.getMinCostPerLevel()),
-//                  enchantment.getAnvilCost(),
-//                  enchantment.getSlotGroup()
-//          )
-//        );
-//
-//        if(enchantment.getExclusiveWith() != null) {
-//            builder.exclusiveWith(enchantmentLookup.getOrThrow(enchantment.getExclusiveWith()));
-//        }
-//
-//        context.register(
-//                enchantment.getKey(),
-//                builder.build(enchantment.getKey().location())
-//        );
-    }
 
     private static <T extends IEnchantment> T register(T enchantment) {
         ALL_ENCHANTMENTS.add(enchantment);
