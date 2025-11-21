@@ -3,18 +3,27 @@ package dev.florianscholz.easyitems;
 import dev.florianscholz.easyitems.block.ModBlocks;
 import dev.florianscholz.easyitems.block.entity.ModBlockEntities;
 import dev.florianscholz.easyitems.component.ModDataComponents;
+import dev.florianscholz.easyitems.effects.ModEffects;
 import dev.florianscholz.easyitems.enchantment.ModEnchantmentEffects;
 import dev.florianscholz.easyitems.item.ModCreativeModeTabs;
 import dev.florianscholz.easyitems.item.ModItems;
 import dev.florianscholz.easyitems.loot.ModLootModifiers;
 import dev.florianscholz.easyitems.recipe.ModRecipes;
 import dev.florianscholz.easyitems.screen.ModMenuTypes;
-import dev.florianscholz.easyitems.screen.custom.AllSeeingEyeScreen;
+import dev.florianscholz.easyitems.screen.custom.AllSeeingHelmetScreen;
 import dev.florianscholz.easyitems.screen.custom.MaterialInfuserScreen;
 import dev.florianscholz.easyitems.tooltip.TooltipStyle;
+import dev.florianscholz.easyitems.tracker.PaybackTracker;
+import dev.florianscholz.easyitems.util.EnchantmentUtils;
+import dev.florianscholz.easyitems.util.ItemEntityMappingLoader;
 import dev.florianscholz.easyitems.util.ModTags;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.client.event.RegisterMenuScreensEvent;
+import net.neoforged.neoforge.event.AddReloadListenerEvent;
+import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
 import org.slf4j.Logger;
 
@@ -48,16 +57,15 @@ public class EasyItems
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
-        // Register ourselves for server and other game events we are interested in.
-        // Note that this is necessary if and only if we want *this* class (ExampleMod) to respond directly to events.
-        // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
+        NeoForge.EVENT_BUS.addListener(this::onAddReloadListeners);
 
         ModCreativeModeTabs.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModEnchantmentEffects.register(modEventBus);
         ModRecipes.register(modEventBus);
+        ModEffects.register(modEventBus);
 
         ModLootModifiers.register(modEventBus);
         ModBlockEntities.register(modEventBus);
@@ -82,6 +90,10 @@ public class EasyItems
     private void commonSetup(final FMLCommonSetupEvent event) {
     }
 
+    private void onAddReloadListeners(AddReloadListenerEvent event) {
+        event.addListener(new ItemEntityMappingLoader());
+    }
+
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
@@ -98,7 +110,7 @@ public class EasyItems
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
-    @EventBusSubscriber(modid = MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    @EventBusSubscriber(modid = MOD_ID, value = Dist.CLIENT)
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
@@ -107,7 +119,7 @@ public class EasyItems
         @SubscribeEvent
         public static void registerScreen(RegisterMenuScreensEvent event) {
             event.register(ModMenuTypes.MATERIAL_INFUSER_MENU.get(), MaterialInfuserScreen::new);
-            event.register(ModMenuTypes.ALL_SEEING_EYE_MENU.get(), AllSeeingEyeScreen::new);
+            event.register(ModMenuTypes.ALL_SEEING_MENU.get(), AllSeeingHelmetScreen::new);
         }
     }
 }

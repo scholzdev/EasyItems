@@ -1,6 +1,6 @@
-// 1.21.1	2025-05-31T23:14:47.031134	Item Models: easyitems
+// 1.21.1	2025-11-20T21:01:22.950712	Item Models: easyitems
 8198ce05aae3e07ba9010a9dbe8be6626906fa92 assets/easyitems/models/item/all_seeing_eye.json
-ce1dedda0453f6c4afdcdd970214b1b69c65689b assets/easyitems/models/item/all_seeing_tungsten_head.json
+b5e7848e8066367b400a7620c80c4319cbbdf1af assets/easyitems/models/item/all_seeing_helmet.json
 a43005d9f27b73912442fe1899b40ac02209b872 assets/easyitems/models/item/bismuth.json
 7d1030031085085187dd1ad66c56c1744e143419 assets/easyitems/models/item/blueprint_paper.json
 ad702466c2b6a89435c41feb34d973d53a261407 assets/easyitems/models/item/blueprint_pickaxe.json
@@ -15,5 +15,6 @@ a47a2caae4e9c6c31b49a2b2cc63084720c6c9e2 assets/easyitems/models/item/ilmenite.j
 d48f7819ecaf2337268940e28dca743ca7323f96 assets/easyitems/models/item/raw_bismuth.json
 d9089c1a06d80781939bd5c9e4132a4c7b9105fe assets/easyitems/models/item/raw_ilmenite.json
 75f1247dfd1d34b72d1d65c8822483bd91a6d63f assets/easyitems/models/item/raw_tungsten.json
+63f48fe1fcaaf367b8e2d026fe7623404d3314a5 assets/easyitems/models/item/soul.json
 d77bbd1d5550dfb64ff420a711072c9cd4e4a203 assets/easyitems/models/item/tungsten.json
 c0e9f4d705aacedac691dc5e5b9b9dcf929d86f7 assets/easyitems/models/item/tungsten_head.json

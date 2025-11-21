@@ -4,10 +4,8 @@ import dev.florianscholz.easyitems.EasyItems;
 import dev.florianscholz.easyitems.block.ModBlocks;
 import dev.florianscholz.easyitems.item.ModItems;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -16,7 +14,6 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 
-import java.awt.*;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
@@ -75,17 +72,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ALL_SEEING_EYE.get())
                 .pattern(" H ")
-                .define('H', ModItems.ALL_SEEING_TUNGSTEN_HEAD.get())
-                .unlockedBy("has_helmet", has(ModItems.ALL_SEEING_TUNGSTEN_HEAD.get()))
+                .define('H', ModItems.ALL_SEEING_HELMET.get())
+                .unlockedBy("has_helmet", has(ModItems.ALL_SEEING_HELMET.get()))
                 .save(recipeOutput, "helmet_to_eye");
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ALL_SEEING_TUNGSTEN_HEAD.get())
-                .pattern(" E ")
-                .pattern(" H ")
-                .define('H', ModItems.TUNGSTEN_HEAD.get())
-                .define('E', ModItems.ALL_SEEING_EYE.get())
-                .unlockedBy("has_all_seeing_eye", has(ModItems.ALL_SEEING_EYE.get()))
-                .save(recipeOutput);
 
         List<ItemLike> TUNGSTEN_SMELTABLES = List.of(ModItems.RAW_TUNGSTEN, ModBlocks.TUNGSTEN_ORE);
         List<ItemLike> ILMENITE_SMELTABLES = List.of(ModItems.RAW_ILMENITE, ModBlocks.ILMENITE_ORE);
@@ -110,6 +99,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('P', ModItems.BLUEPRINT_PAPER)
                 .define('S', Items.STICK)
                 .unlockedBy("has_blueprint_paper", has(ModItems.BLUEPRINT_PAPER))
+                .save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ALL_SEEING_HELMET.get())
+                .pattern(" E ")
+                .pattern(" H ")
+                .pattern("   ")
+                .define('E', ModItems.ALL_SEEING_EYE)
+                .define('H', ModItems.TUNGSTEN_HEAD)
+                .unlockedBy("has_helmet", has(ModItems.TUNGSTEN_HEAD))
+                .unlockedBy("has_eye", has(ModItems.ALL_SEEING_EYE))
                 .save(recipeOutput);
 
         craftablePickaxeRecipe(ModItems.CRAFTABLE_IRON_PICKAXE, Items.IRON_PICKAXE, recipeOutput);

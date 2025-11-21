@@ -1,4 +1,13 @@
 {
-  "entries": [],
+  "entries": [
+    "easyitems:soul_from_zombie",
+    "easyitems:soul_from_piglin_brute",
+    "easyitems:soul_from_wither_skeleton",
+    "easyitems:soul_from_player",
+    "easyitems:soul_from_skeleton",
+    "easyitems:soul_from_creeper",
+    "easyitems:soul_from_ender_dragon",
+    "easyitems:soul_from_piglin"
+  ],
   "replace": false
 }

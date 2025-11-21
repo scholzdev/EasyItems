@@ -18,7 +18,7 @@ public class AllSeeingEyeMenuBackup extends AbstractContainerMenu {
     ItemStackHandler itemStackHandler = new ItemStackHandler(1);
 
     public AllSeeingEyeMenuBackup(int containerId, Inventory inv, ItemStack itemstack) {
-        super(ModMenuTypes.ALL_SEEING_EYE_MENU.get(), containerId);
+        super(ModMenuTypes.ALL_SEEING_MENU.get(), containerId);
         this.targetItem = itemstack;
         addPlayerInventory(inv);
         addPlayerHotbar(inv);

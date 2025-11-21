@@ -1,7 +1,7 @@
 package dev.florianscholz.easyitems.screen;
 
 import dev.florianscholz.easyitems.EasyItems;
-import dev.florianscholz.easyitems.screen.custom.AllSeeingEyeMenu;
+import dev.florianscholz.easyitems.screen.custom.AllSeeingHelmetMenu;
 import dev.florianscholz.easyitems.screen.custom.MaterialInfuserMenu;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -19,11 +19,8 @@ public class ModMenuTypes {
     public static final DeferredHolder<MenuType<?>, MenuType<MaterialInfuserMenu>> MATERIAL_INFUSER_MENU =
             registerMenuType("material_infuser_menu", MaterialInfuserMenu::new);
 
-//    public static final DeferredHolder<MenuType<?>, MenuType<AllSeeingEyeMenu>> ALL_SEEING_EYE_MENU2 =
-//            registerMenuType("all_seeing_eye_menu", AllSeeingEyeMenu::new);
-
-    public static final DeferredHolder<MenuType<?>, MenuType<AllSeeingEyeMenu>> ALL_SEEING_EYE_MENU =
-            MENUS.register("all_seeing_eye_menu", () -> IMenuTypeExtension.create(AllSeeingEyeMenu::fromNetwork));
+    public static final DeferredHolder<MenuType<?>, MenuType<AllSeeingHelmetMenu>> ALL_SEEING_MENU =
+            MENUS.register("all_seeing_menu", () -> IMenuTypeExtension.create(AllSeeingHelmetMenu::fromNetwork));
 
     private static <T extends AbstractContainerMenu> DeferredHolder<MenuType<?>, MenuType<T>> registerMenuType(String name,
                                                                                                                IContainerFactory<T> factory) {

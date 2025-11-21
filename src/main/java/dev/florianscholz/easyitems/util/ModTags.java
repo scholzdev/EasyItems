@@ -32,9 +32,10 @@ public class ModTags {
     }
 
     public static class Enchantments {
-        public static final TagKey<Enchantment> FIRE_ASPECT = createTag("fire_aspect_enchantmens");
+        public static final TagKey<Enchantment> HEALING_EXCLUSIVE = createTag("healing_exclusive");
+
         public static TagKey<Enchantment> createTag(String name) {
-            return TagKey.create(Registries.ENCHANTMENT, ResourceLocation.withDefaultNamespace(name));
+            return TagKey.create(Registries.ENCHANTMENT, ResourceLocation.fromNamespaceAndPath(EasyItems.MOD_ID, name));
         }
     }
 }

@@ -5,6 +5,7 @@
   "item.easyitems.tungsten": "Tungsten",
   "item.easyitems.raw_tungsten": "Raw Tungsten",
   "item.easyitems.infused_tungsten": "Infused Tungsten",
+  "item.easyitems.tungsten_head": "Tungsten Helmet",
   "block.easyitems.tungsten_ore": "Tungsten Ore",
   "block.easyitems.material_infuser": "Material Infuser",
 
@@ -23,7 +24,8 @@
   "item.easyitems.craftable_diamond_pickaxe": "Craftable Diamond Pickaxe",
 
   "item.easyitems.all_seeing_eye": "All Seeing Eye",
-  "item.easyitems.all_seeing_tungsten_head": "All Seeing Helmet",
+  "item.easyitems.all_seeing_helmet": "All Seeing Helmet",
+  "item.easyitems.soul": "Soul",
 
   "item.easyitems.ilmenite": "Ilmenite",
   "item.easyitems.raw_ilmenite": "Raw Ilmenite",
@@ -48,8 +50,20 @@
   "enchantment.easyitems.lifesteal": "Lifesteal",
   "enchantment.easyitems.mining_range": "Mining Range",
   "enchantment.easyitems.attack_range": "Attack Range",
+  "enchantment.easyitems.ice_aspect": "Ice Aspect",
+  "enchantment.easyitems.perception": "Perception",
+  "enchantment.easyitems.photosynthesis": "Photosynthesis",
+  "enchantment.easyitems.metabolism": "Metabolism",
+  "enchantment.easyitems.berserk": "Berserk",
+  "enchantment.easyitems.payback": "Payback",
+  "enchantment.easyitems.smelting": "Smelting",
+  "enchantment.easyitems.double_jump": "Double Jump",
+  "enchantment.easyitems.enlightenment": "Enlightenment",
+  "enchantment.easyitems.reaper": "Reaper",
+  "enchantment.easyitems.gourmet": "Gourmet",
+
+  "effect.easyitems.visual_wither": "Soul Wither",
 
   "creativetab.easyitems.blocks_tab": "EasyItems Blocks",
   "creativetab.easyitems.items_tab": "EasyItems Items"
-
 }

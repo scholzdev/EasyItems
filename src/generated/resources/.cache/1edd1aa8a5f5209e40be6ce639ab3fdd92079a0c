@@ -1,2 +1,4 @@
-// 1.21.1	2025-05-28T12:05:38.087236	Tags for minecraft:enchantment mod id vanilla
-a4a4fea514a3bc248d542fc7988b85b8e1c09207 data/minecraft/tags/enchantment/fire_aspect_enchantmens.json
+// 1.21.1	2025-11-21T01:22:49.863253	Tags for minecraft:enchantment mod id vanilla
+2bb5899ff186d206b9de03a706eed2d7f88a701d data/easyitems/tags/enchantment/healing_exclusive.json
+2d744a78eb758850d4573df568423d58ca587812 data/minecraft/tags/enchantment/non_treasure.json
+2d744a78eb758850d4573df568423d58ca587812 data/minecraft/tags/enchantment/tradeable.json

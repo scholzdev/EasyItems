@@ -1,5 +1,5 @@
-// 1.21.1	2025-05-31T23:36:35.894632	Recipes
-292fe5037cb5c95cf311bdaf512a9005287e854b data/easyitems/advancement/recipes/misc/all_seeing_tungsten_head.json
+// 1.21.1	2025-11-20T20:18:00.121359	Recipes
+518148cc4eeeaef1efae2be86c0fc098da54225b data/easyitems/advancement/recipes/misc/all_seeing_helmet.json
 a6239ec47b447a78d49b78734f7cd605ce98cdc5 data/easyitems/advancement/recipes/misc/bismuth.json
 255ba84653efaa9da03a995f91466014cfa39dcd data/easyitems/advancement/recipes/misc/bismuth_block.json
 4c8743efef59137a1991585b17f40de1af926c7c data/easyitems/advancement/recipes/misc/bismuth_from_blasting_bismuth_ore.json
@@ -24,7 +24,7 @@ e55023abfa4e8e05aff0d79917cd8bbe7769ca85 data/easyitems/advancement/recipes/misc
 86b1efdaf764fdc5cd4c7b1f1909dedf3a0aeaf3 data/easyitems/advancement/recipes/misc/tungsten_from_smelting_raw_tungsten.json
 3dd11288cffc22089324b69087525739a5004439 data/easyitems/advancement/recipes/misc/tungsten_from_smelting_tungsten_ore.json
 a3a2980122ec8d275b62ed825433d25366c291bb data/easyitems/advancement/recipes/misc/tungsten_head.json
-a40b9c44478d4714573baac6746b4932a4f3bc2b data/easyitems/recipe/all_seeing_tungsten_head.json
+9d20ea28804360d9e22b073dd40409d8b3019540 data/easyitems/recipe/all_seeing_helmet.json
 5b1ccc5debea8481540363cba634ca6de93633f4 data/easyitems/recipe/bismuth.json
 9def084d620acbbdc6d9be2cb74518261ea1c5f0 data/easyitems/recipe/bismuth_block.json
 4c8f294f77277152c9857c957387bf24b2fc6420 data/easyitems/recipe/bismuth_from_blasting_bismuth_ore.json
@@ -52,8 +52,8 @@ d12e037698312b9fb215e617c55081046f9eee47 data/easyitems/recipe/tungsten_from_sme
 ae62b4c6a36d677db2297431ac5b6f5e4b77212c data/minecraft/advancement/recipes/misc/all_seeing_eye.json
 69bcac393de6ba2156457cd61ad3d8a3b7c75a37 data/minecraft/advancement/recipes/misc/diamond_ore.json
 d4866316b66afad28bf729a24a46c49ec38ead6c data/minecraft/advancement/recipes/misc/emerald_ore.json
-8e2bbb2dcd1225978a83e2167e6bc4810f0892a5 data/minecraft/advancement/recipes/misc/helmet_to_eye.json
+e6746d5922ca9874b38b36d89edba4a5c10bcd7b data/minecraft/advancement/recipes/misc/helmet_to_eye.json
 538b0bb243e2d6be3c8a51389e48ee8a8948c674 data/minecraft/recipe/all_seeing_eye.json
 15e72b41f920b74ccef9b03def8ee11da186c297 data/minecraft/recipe/diamond_ore.json
 e0d3f3a60bfcb347d71861effc0f22ed66eefa41 data/minecraft/recipe/emerald_ore.json
-bb887ec773e61a2376ff2e5ae2df51cf66dffced data/minecraft/recipe/helmet_to_eye.json
+e4e90cb5d2768f81d25716f338c19c9f7e04cd3c data/minecraft/recipe/helmet_to_eye.json

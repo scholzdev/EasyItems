@@ -1,7 +1,7 @@
 package dev.florianscholz.easyitems.datagen;
 
 import dev.florianscholz.easyitems.EasyItems;
-import dev.florianscholz.easyitems.enchantment.ModEnchantments;
+import dev.florianscholz.easyitems.enchantment.ModEnchantmentKeys;
 import dev.florianscholz.easyitems.worldgen.ModBiomeModifiers;
 import dev.florianscholz.easyitems.worldgen.ModConfiguredFeatures;
 import dev.florianscholz.easyitems.worldgen.ModPlacedFeatures;
@@ -18,7 +18,7 @@ import java.util.concurrent.CompletableFuture;
 public class ModDatapackProvider extends DatapackBuiltinEntriesProvider {
 
     public static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
-            .add(Registries.ENCHANTMENT, ModEnchantments::bootstrap)
+            .add(Registries.ENCHANTMENT, ModEnchantmentKeys::bootstrap)
             .add(Registries.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap)
             .add(Registries.PLACED_FEATURE, ModPlacedFeatures::bootstrap)
             .add(NeoForgeRegistries.Keys.BIOME_MODIFIERS, ModBiomeModifiers::bootstrap);

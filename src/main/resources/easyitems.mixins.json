@@ -6,6 +6,10 @@
     "MinecraftMixin"
   ],
   "client": [
+    "LightTextureMixin",
+    "InGameHudMixin",
+    "ItemMixin",
+    "GourmetMixin"
   ],
   "injectors": {
     "defaultRequire": 1

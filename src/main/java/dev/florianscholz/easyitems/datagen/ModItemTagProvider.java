@@ -38,5 +38,13 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.CRAFTABLE_IRON_PICKAXE.get())
                 .add(ModItems.CRAFTABLE_GOLDEN_PICKAXE.get())
                 .add(ModItems.CRAFTABLE_DIAMOND_PICKAXE.get());
+
+        tag(ItemTags.HOES)
+                .add(Items.WOODEN_HOE)
+                .add(Items.STONE_HOE)
+                .add(Items.IRON_HOE)
+                .add(Items.GOLDEN_HOE)
+                .add(Items.DIAMOND_HOE)
+                .add(Items.NETHERITE_HOE);
     }
 }

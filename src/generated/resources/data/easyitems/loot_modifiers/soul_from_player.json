@@ -1,0 +1,19 @@
+{
+  "type": "easyitems:reaper_loot_modifier",
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:entities/player"
+    }
+  ],
+  "head": {
+    "count": 1,
+    "id": "minecraft:player_head"
+  },
+  "head_chance": 0.1,
+  "soul": {
+    "count": 1,
+    "id": "easyitems:soul"
+  },
+  "soul_chance": 0.4
+}

@@ -1,5 +1,6 @@
 package dev.florianscholz.easyitems.events;
 
+import dev.florianscholz.easyitems.EasyItems;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.model.ZombieModel;
 import net.minecraft.client.model.geom.ModelLayers;
@@ -11,9 +12,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.api.distmarker.OnlyIn;
 import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.Mod;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
-
-//@OnlyIn(Dist.CLIENT)
-//public class ModClientEvents {
-//
-//}
+import net.neoforged.neoforge.event.level.BlockEvent;

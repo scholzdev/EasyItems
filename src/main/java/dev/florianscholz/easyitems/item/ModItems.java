@@ -5,6 +5,8 @@ import dev.florianscholz.easyitems.item.custom.*;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.common.DeferredSpawnEggItem;
+import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -40,8 +42,10 @@ public class ModItems {
     public static final DeferredItem<AllSeeingEye> ALL_SEEING_EYE = ITEMS.register("all_seeing_eye", () -> new AllSeeingEye(new Item.Properties()));
 
     // Armor
-    public static final DeferredItem<ArmorItem> ALL_SEEING_TUNGSTEN_HEAD = ITEMS.register("all_seeing_tungsten_head", () -> new AllSeeingHead(ALL_SEEING_EYE.get(), ModArmorMaterials.TUNGSTEN_ARMOR_MATERIAL, ArmorItem.Type.HELMET, new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(20))));
+    public static final DeferredItem<ArmorItem> ALL_SEEING_HELMET = ITEMS.register("all_seeing_helmet", () -> new AllSeeingHelmet(ModArmorMaterials.TUNGSTEN_ARMOR_MATERIAL, ArmorItem.Type.HELMET, new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(20))));
     public static final DeferredItem<ArmorItem> TUNGSTEN_HEAD = ITEMS.register("tungsten_head", () -> new ArmorItem(ModArmorMaterials.TUNGSTEN_ARMOR_MATERIAL, ArmorItem.Type.HELMET, new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(20))));
+
+    public static final DeferredItem<Item> SOUL = ITEMS.register("soul", () -> new Item(new Item.Properties().food(ModFoodProperties.SOUL)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

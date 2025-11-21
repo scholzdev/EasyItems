@@ -37,7 +37,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.CRAFTABLE_DIAMOND_PICKAXE.get());
 
         basicItem(ModItems.TUNGSTEN_HEAD.get());
-        basicItem(ModItems.ALL_SEEING_TUNGSTEN_HEAD.get());
+        basicItem(ModItems.ALL_SEEING_HELMET.get());
         basicItem(ModItems.ALL_SEEING_EYE.get());
+        basicItem(ModItems.SOUL.get());
     }
 }
