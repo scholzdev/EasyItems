@@ -1,9 +1,11 @@
 package dev.florianscholz.easyitems;
 
+import dev.florianscholz.easyitems.component.ModDataComponents;
 import dev.florianscholz.easyitems.effects.ModEffects;
 import dev.florianscholz.easyitems.enchantment.ModEnchantmentEffects;
 import dev.florianscholz.easyitems.item.ModItems;
 import dev.florianscholz.easyitems.loot.ModLootModifiers;
+import dev.florianscholz.easyitems.recipe.ModRecipe;
 import dev.florianscholz.easyitems.util.ItemEntityMappingLoader;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.neoforge.event.AddReloadListenerEvent;
@@ -42,10 +44,12 @@ public class EasyItems
         NeoForge.EVENT_BUS.register(this);
         NeoForge.EVENT_BUS.addListener(this::onAddReloadListeners);
 
+        ModDataComponents.register(modEventBus);
         ModItems.register(modEventBus);
         ModEnchantmentEffects.register(modEventBus);
         ModEffects.register(modEventBus);
 
+        ModRecipe.register(modEventBus);
         ModLootModifiers.register(modEventBus);
 
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us

@@ -9,7 +9,6 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 
 @EventBusSubscriber(modid = EasyItems.MOD_ID)
-
 public class DamageModifierEnchantmentEventHandler {
 
         @SubscribeEvent

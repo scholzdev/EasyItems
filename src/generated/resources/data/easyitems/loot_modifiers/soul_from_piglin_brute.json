@@ -12,6 +12,9 @@
   },
   "head_chance": 0.1,
   "soul": {
+    "components": {
+      "easyitems:soul_entity_type": "piglin_brute"
+    },
     "count": 1,
     "id": "easyitems:soul"
   },

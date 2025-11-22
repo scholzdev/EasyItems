@@ -1,15 +1,10 @@
 package dev.florianscholz.easyitems.enchantment;
 
 import dev.florianscholz.easyitems.EasyItems;
-import dev.florianscholz.easyitems.enchantment.types.IEnchantment;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.EnchantmentTags;
-import net.minecraft.tags.ItemTags;
-import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.item.enchantment.*;
 
 import java.util.List;
@@ -29,6 +24,10 @@ public class ModEnchantmentKeys {
     public static final ResourceKey<Enchantment> ENLIGHTENMENT = key("enlightenment");
     public static final ResourceKey<Enchantment> REAPER = key("reaper");
     public static final ResourceKey<Enchantment> GOURMET = key("gourmet");
+    public static final ResourceKey<Enchantment> VENOM = key("venom");
+    public static final ResourceKey<Enchantment> POISON_WARD = key("poison_ward");
+    public static final ResourceKey<Enchantment> PRODIGY = key("prodigy");
+    public static final ResourceKey<Enchantment> LUMBERJACK = key("lumberjack");
 
     public static void bootstrap(BootstrapContext<Enchantment> context) {
 
@@ -36,15 +35,22 @@ public class ModEnchantmentKeys {
         var items = context.lookup(Registries.ITEM);
 
         ModEnchantmentRegistry.getAllEnchantments().forEach(key -> {
-            register(context, key.getKey(), Enchantment.enchantment(Enchantment.definition(
+
+            Enchantment.Builder builder = Enchantment.enchantment(Enchantment.definition(
                     items.getOrThrow(key.getSupportedItems()),
                     key.getWeight(),
                     key.getMaxLevel(),
                     Enchantment.dynamicCost(key.getMinCostBase(), key.getMinCostPerLevel()),
                     Enchantment.dynamicCost(key.getMaxCostBase(), key.getMaxCostPerLevel()),
                     key.getAnvilCost(),
-                    key.getSlotGroup()))
-            );
+                    key.getSlotGroup()
+            ));
+
+            if(key.getExclusiveWith() != null) {
+                builder.exclusiveWith(enchantments.getOrThrow(key.getExclusiveWith()));
+            }
+
+            register(context, key.getKey(), builder);
         });
     }
 
@@ -53,6 +59,6 @@ public class ModEnchantmentKeys {
     }
 
     public static List<ResourceKey<Enchantment>> getAllKeys() {
-        return List.of(PHOTOSYNTHESIS, NOCTURNAL, BERSERK, PAYBACK, SMELTING, DOUBLE_JUMP, ENLIGHTENMENT, REAPER, GOURMET);
+        return List.of(PHOTOSYNTHESIS, NOCTURNAL, BERSERK, PAYBACK, SMELTING, DOUBLE_JUMP, ENLIGHTENMENT, REAPER, GOURMET, VENOM);
     }
 }

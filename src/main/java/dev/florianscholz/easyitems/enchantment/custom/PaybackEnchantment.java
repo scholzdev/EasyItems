@@ -35,7 +35,7 @@ public class PaybackEnchantment extends BaseEnchantment implements CombatEnchant
     }
 
     @Override
-    public void onHurt(Player attacker, Entity victim, int level, float damage) {
+    public void onHurt(Player attacker, LivingEntity victim, int level, float damage) {
         if(!(victim instanceof Player player)) return;
 
         int duration = 2 * level;

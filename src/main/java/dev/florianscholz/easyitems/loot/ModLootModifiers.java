@@ -19,6 +19,9 @@ public class ModLootModifiers {
     public static final Supplier<MapCodec<? extends IGlobalLootModifier>> ADD_ENCHANTED_BOOK_ITEM =
             LOOT_MODIFIER_SERIALIZERS.register("add_enchanted_book_item", () -> AddEnchantedBookItemModifier.CODEC);
 
+    public static final Supplier<MapCodec<? extends IGlobalLootModifier>> ADD_RANDOM_ENCHANTED_BOOK_ITEM =
+            LOOT_MODIFIER_SERIALIZERS.register("add_random_enchanted_book_item", () -> AddRandomEnchantedBookItemModifier.CODEC);
+
     public static final Supplier<MapCodec<? extends IGlobalLootModifier>> REAPER_LOOT_MODIFIER = LOOT_MODIFIER_SERIALIZERS.register("reaper_loot_modifier", () -> ReaperLootModifier.CODEC);
 
     public static void register(IEventBus eventBus) {

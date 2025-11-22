@@ -12,6 +12,9 @@
   },
   "head_chance": 0.1,
   "soul": {
+    "components": {
+      "easyitems:soul_entity_type": "player"
+    },
     "count": 1,
     "id": "easyitems:soul"
   },

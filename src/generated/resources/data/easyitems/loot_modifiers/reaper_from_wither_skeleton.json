@@ -1,0 +1,28 @@
+{
+  "type": "easyitems:add_random_enchanted_book_item",
+  "conditions": [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "minecraft:entities/wither_skeleton"
+    },
+    {
+      "chance": 0.035,
+      "condition": "minecraft:random_chance"
+    }
+  ],
+  "enchantment": "easyitems:reaper",
+  "levels": [
+    {
+      "chance": 0.01,
+      "level": 3
+    },
+    {
+      "chance": 0.025,
+      "level": 2
+    },
+    {
+      "chance": 0.03,
+      "level": 1
+    }
+  ]
+}

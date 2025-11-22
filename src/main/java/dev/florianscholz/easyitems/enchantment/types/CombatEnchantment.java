@@ -11,12 +11,12 @@ public interface CombatEnchantment extends IEnchantment {
     /**
      * Wird aufgerufen wenn der Träger Schaden zufügt
      */
-    default void onAttack(Player attacker, Entity target, int level, ItemStack weapon, float damage) {}
+    default void onAttack(Player attacker, LivingEntity target, int level, ItemStack weapon, float damage) {}
 
-    default void onHurt(Player attacker, Entity victim, int level, float damage) {}
+    default void onHurt(Player attacker, LivingEntity victim, int level, float damage) {}
 
     /**
      * Wird aufgerufen nach dem Angriff (auch wenn kein Schaden)
      */
-    default void postAttack(Player attacker, Entity target, int level, ItemStack weapon) {}
+    default void postAttack(Player attacker, LivingEntity target, int level, ItemStack weapon) {}
 }

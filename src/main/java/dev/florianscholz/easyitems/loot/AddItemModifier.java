@@ -11,6 +11,8 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.neoforged.neoforge.common.loot.IGlobalLootModifier;
 import net.neoforged.neoforge.common.loot.LootModifier;
 
+import java.util.Arrays;
+
 public class AddItemModifier extends LootModifier {
     public static final MapCodec<AddItemModifier> CODEC = RecordCodecBuilder.mapCodec(inst ->
             LootModifier.codecStart(inst).and(
@@ -24,12 +26,19 @@ public class AddItemModifier extends LootModifier {
 
     @Override
     protected ObjectArrayList<ItemStack> doApply(ObjectArrayList<ItemStack> generatedLoot, LootContext lootContext) {
-        for (LootItemCondition condition : this.conditions) {
-            if(!condition.test(lootContext)) {
-                return generatedLoot;
+
+        Arrays.stream(this.conditions).forEach(condition -> {
+            if(condition.test(lootContext)) {
+               generatedLoot.add(new ItemStack(this.item));
             }
-        }
-        generatedLoot.add(new ItemStack(this.item));
+        });
+
+//        for (LootItemCondition condition : this.conditions) {
+//            if(!condition.test(lootContext)) {
+//                return generatedLoot;
+//            }
+//        }
+//        generatedLoot.add(new ItemStack(this.item));
         return generatedLoot;
     }
 

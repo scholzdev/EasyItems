@@ -6,7 +6,6 @@
       "loot_table_id": "minecraft:chests/pillager_outpost"
     }
   ],
-  "enchantmentId": "easyitems:photosynthesis",
-  "itemId": "minecraft:book",
-  "level": 3
+  "enchantment": "easyitems:gourmet",
+  "level": 1
 }

@@ -1,15 +1,19 @@
 package dev.florianscholz.easyitems.datagen;
 
 import dev.florianscholz.easyitems.EasyItems;
+import dev.florianscholz.easyitems.component.ModDataComponents;
 import dev.florianscholz.easyitems.enchantment.ModEnchantmentKeys;
 import dev.florianscholz.easyitems.item.ModItems;
 import dev.florianscholz.easyitems.loot.AddEnchantedBookItemModifier;
 import dev.florianscholz.easyitems.loot.AddItemModifier;
+import dev.florianscholz.easyitems.loot.AddRandomEnchantedBookItemModifier;
 import dev.florianscholz.easyitems.loot.ReaperLootModifier;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.EnchantedBookItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -17,10 +21,12 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentInstance;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
 import net.neoforged.neoforge.common.data.GlobalLootModifierProvider;
 import net.neoforged.neoforge.common.loot.LootTableIdCondition;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 
@@ -40,22 +46,25 @@ public class ModGlobalLootModifierProvider extends GlobalLootModifierProvider {
     protected void start() {
         registerHeadAndSoulLootTables();
 
-        this.add("book_from_outpost", new AddEnchantedBookItemModifier(
+        this.add("gourmet_in_outpost", new AddEnchantedBookItemModifier(
                 new LootItemCondition[]{
                         LootTableIdCondition.builder(ResourceLocation.withDefaultNamespace("chests/pillager_outpost")).build()
                 },
-                ResourceLocation.withDefaultNamespace("book"),
-                Optional.of(ModEnchantmentKeys.GOURMET.location()),
+                ModEnchantmentKeys.GOURMET.location(),
                 1
         ));
 
-        this.add("book_from_outpost", new AddEnchantedBookItemModifier(
+        this.add("reaper_from_wither_skeleton", new AddRandomEnchantedBookItemModifier(
                 new LootItemCondition[]{
-                        LootTableIdCondition.builder(ResourceLocation.withDefaultNamespace("chests/pillager_outpost")).build()
+                        LootTableIdCondition.builder(ResourceLocation.withDefaultNamespace("entities/wither_skeleton")).build(),
+                        LootItemRandomChanceCondition.randomChance(0.035f).build()
                 },
-                ResourceLocation.withDefaultNamespace("book"),
-                Optional.of(ModEnchantmentKeys.PHOTOSYNTHESIS.location()),
-                3
+                ModEnchantmentKeys.REAPER.location(),
+                List.of(
+                        new AddRandomEnchantedBookItemModifier.LevelChance(1, 0.03f),
+                        new AddRandomEnchantedBookItemModifier.LevelChance(2, 0.025f),
+                        new AddRandomEnchantedBookItemModifier.LevelChance(3, 0.01f)
+                )
         ));
 
     }
@@ -69,13 +78,16 @@ public class ModGlobalLootModifierProvider extends GlobalLootModifierProvider {
             String mobName = fullPath.substring(fullPath.lastIndexOf("/") + 1);
             ItemStack head = set.getValue();
 
+            ItemStack soul = new ItemStack(ModItems.SOUL.get());
+            soul.set(ModDataComponents.SOUL_ENTITY_TYPE, mobName);
+
             this.add("soul_from_" + mobName, new ReaperLootModifier(
                     new LootItemCondition[]{
                             new LootTableIdCondition.Builder(ResourceLocation.withDefaultNamespace(fullPath)).build()
                     },
                     soulChance,
                     headChance,
-                    new ItemStack(ModItems.SOUL.get()),
+                    soul,
                     head
             ));
         });

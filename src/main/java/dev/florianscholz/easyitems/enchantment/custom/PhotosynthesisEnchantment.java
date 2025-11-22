@@ -20,7 +20,7 @@ public class PhotosynthesisEnchantment extends BaseEnchantment implements Tickab
         super(
                 ModEnchantmentKeys.PHOTOSYNTHESIS,
                 ItemTags.HEAD_ARMOR_ENCHANTABLE,
-//                ModTags.Enchantments.HEALING_EXCLUSIVE,
+                ModTags.Enchantments.HEALING_EXCLUSIVE,
                 EquipmentSlotGroup.HEAD,
                 EquipmentSlot.HEAD,
                 5,

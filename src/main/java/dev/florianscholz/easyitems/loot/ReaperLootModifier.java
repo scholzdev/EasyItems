@@ -2,6 +2,7 @@ package dev.florianscholz.easyitems.loot;
 
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import dev.florianscholz.easyitems.component.ModDataComponents;
 import dev.florianscholz.easyitems.enchantment.ModEnchantmentKeys;
 import dev.florianscholz.easyitems.util.EnchantmentUtils;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;

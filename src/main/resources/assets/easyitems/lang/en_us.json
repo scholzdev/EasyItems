@@ -1,59 +1,8 @@
 {
-  "item.easyitems.bismuth": "Bismuth",
-  "item.easyitems.raw_bismuth": "Raw Bismuth",
-
-  "item.easyitems.tungsten": "Tungsten",
-  "item.easyitems.raw_tungsten": "Raw Tungsten",
-  "item.easyitems.infused_tungsten": "Infused Tungsten",
-  "item.easyitems.tungsten_head": "Tungsten Helmet",
-  "block.easyitems.tungsten_ore": "Tungsten Ore",
-  "block.easyitems.material_infuser": "Material Infuser",
-
-  "block.easyitems.bismuth_block": "Block of Bismuth",
-  "block.easyitems.bismuth_ore": "Bismuth Ore",
-
-  "item.easyitems.blueprint_paper": "Blueprint Paper",
-  "item.easyitems.blueprint_pickaxe": "Pickaxe Blueprint",
-  "item.easyitems.pickaxe_head_iron": "Iron Pickaxe Head",
-  "item.easyitems.pickaxe_head_gold": "Golden Pickaxe Head",
-  "item.easyitems.pickaxe_head_diamond": "Diamond Pickaxe Head",
-  "item.easyitems.pickaxe_head_netherite": "Netherite Pickaxe Head",
-
-  "item.easyitems.craftable_iron_pickaxe": "Craftable Iron Pickaxe",
-  "item.easyitems.craftable_golden_pickaxe": "Craftable Golden Pickaxe",
-  "item.easyitems.craftable_diamond_pickaxe": "Craftable Diamond Pickaxe",
-
-  "item.easyitems.all_seeing_eye": "All Seeing Eye",
-  "item.easyitems.all_seeing_helmet": "All Seeing Helmet",
   "item.easyitems.soul": "Soul",
 
-  "item.easyitems.ilmenite": "Ilmenite",
-  "item.easyitems.raw_ilmenite": "Raw Ilmenite",
-  "block.easyitems.ilmenite_ore": "Ilmenite Ore",
-
-  "tooltip.easyitems.pickaxe": "Press §eShift§r for more Information",
-  "durabilitytooltip.info.bar.durability_hint": "Durability:",
-  "durabilitytooltip.info.bar.bar_line": "[%s]",
-  "durabilitytooltip.info.bar.full_symbol": "█",
-  "durabilitytooltip.info.bar.empty_symbol": "▒",
-  "durabilitytooltip.info.numbers.durability_hint": "Durability: %s",
-  "durabilitytooltip.info.numbers.full_durability": "%d",
-  "durabilitytooltip.info.numbers.damaged": "%1$d / %2$d",
-  "durabilitytooltip.info.text.durability_hint": "Durability: %s",
-  "durabilitytooltip.info.text.full_durability": "Pristine",
-  "durabilitytooltip.info.text.damaged": "Slightly damaged",
-  "durabilitytooltip.info.text.severely_damaged": "Severely damaged",
-  "durabilitytooltip.info.text.nearly_broken": "Nearly broken",
-
-  "enchantment.easyitems.climbing": "Climbing",
-  "enchantment.easyitems.bleeding": "Bleeding",
-  "enchantment.easyitems.lifesteal": "Lifesteal",
-  "enchantment.easyitems.mining_range": "Mining Range",
-  "enchantment.easyitems.attack_range": "Attack Range",
-  "enchantment.easyitems.ice_aspect": "Ice Aspect",
-  "enchantment.easyitems.perception": "Perception",
   "enchantment.easyitems.photosynthesis": "Photosynthesis",
-  "enchantment.easyitems.metabolism": "Metabolism",
+  "enchantment.easyitems.nocturnal": "Nocturnal",
   "enchantment.easyitems.berserk": "Berserk",
   "enchantment.easyitems.payback": "Payback",
   "enchantment.easyitems.smelting": "Smelting",
@@ -61,9 +10,10 @@
   "enchantment.easyitems.enlightenment": "Enlightenment",
   "enchantment.easyitems.reaper": "Reaper",
   "enchantment.easyitems.gourmet": "Gourmet",
+  "enchantment.easyitems.venom": "Venom",
+  "enchantment.easyitems.poison_ward": "Poison Ward",
+  "enchantment.easyitems.prodigy": "Prodigy",
+  "enchantment.easyitems.lumberjack": "Lumberjack",
 
-  "effect.easyitems.visual_wither": "Soul Wither",
-
-  "creativetab.easyitems.blocks_tab": "EasyItems Blocks",
-  "creativetab.easyitems.items_tab": "EasyItems Items"
+  "effect.easyitems.visual_wither": "Soul Wither"
 }
